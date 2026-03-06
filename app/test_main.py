@@ -59,6 +59,7 @@ def test_should_return_15_years_for_1_human_year(
 ) -> None:
     assert get_human_age(cat_age, dog_age) == human_age
 
-def test_cannot_recieve_non_int_values():
+
+def test_cannot_recieve_non_int_values() -> None:
     with pytest.raises(TypeError):
         get_human_age("2", "2")
