@@ -45,6 +45,11 @@ from app.main import get_human_age
             100,
             [21, 17]
         ),
+        (
+            -5,
+            -5,
+            [0, 0]
+        ),
     ]
 )
 def test_should_return_15_years_for_1_human_year(
@@ -53,3 +58,7 @@ def test_should_return_15_years_for_1_human_year(
         human_age: list
 ) -> None:
     assert get_human_age(cat_age, dog_age) == human_age
+
+def test_cannot_recieve_non_int_values():
+    with pytest.raises(TypeError):
+        get_human_age("2", "2")
